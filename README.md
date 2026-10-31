@@ -11,7 +11,17 @@
 5. **Project Settings → API**: copy the **Project URL** and **anon public** key.
 
 ## 2. Connect the app
-Open `config.js` and paste the URL and anon key.
+// ===== IH Control Center configuration =====
+// Get these from Supabase: Project Settings -> API.
+// The anon key is meant to be public; the database rules in setup.sql protect the data.
+window.IHCC_CONFIG = {
+  SUPABASE_URL: "https://yfinqralinnznqmcbkcb.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlmaW5xcmFsaW5uem5xbWNia2NiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMzNzA1MTMsImV4cCI6MjEwODk0NjUxM30.kUjAU42apHminiDJ6WEfFK2Y1j-cyjtdN_uL6UoWg70",
+  // Lets people log in with a short username: "Fikri01" becomes "fikri01@ihcc.app".
+  // Create the Supabase user with that email. People can also type a full email.
+  USERNAME_DOMAIN: "ihcc.app"
+};
+
 
 ## 3. Publish
 Drag the folder onto Netlify (or push to GitHub and connect Netlify).
